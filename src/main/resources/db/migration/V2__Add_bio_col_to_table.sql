@@ -1,0 +1,1 @@
+alter table GITHUBUSER add bio VARCHAR(256);

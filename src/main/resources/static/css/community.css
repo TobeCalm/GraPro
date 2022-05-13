@@ -1,0 +1,19 @@
+.main{
+    margin: 30px;
+}
+
+.avatar{
+    width: 38px;
+    height: 38px;
+    border-radius: 38px;
+}
+
+.background{
+    background-color: #efefef
+}
+
+.text-desc{
+    font-size: 13px;
+    font-weight: normal;
+    color: #999;
+}
