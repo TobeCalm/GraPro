@@ -4,6 +4,7 @@ import life.witold.community.dto.AccessTokenDTO;
 import life.witold.community.dto.GithubUser;
 import life.witold.community.mapper.UserMapper;
 import life.witold.community.model.User;
+import life.witold.community.model.UserExample;
 import life.witold.community.provider.GithubProvider;
 import life.witold.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,9 @@ public class AuthorizeController {
         if(githubUser!=null && githubUser.getId()!=null){
             User user = new User();
             String token = UUID.randomUUID().toString();
+            UserExample userExample = new UserExample();
+            Integer count = (int)userMapper.countByExample(userExample);
+            user.setId(count+1);
             user.setName(githubUser.getName());
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setAvatarUrl(githubUser.getAvatarUrl());

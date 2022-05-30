@@ -2,8 +2,11 @@ package life.witold.community.controller;
 
 
 import life.witold.community.dto.QuestionDTO;
+import life.witold.community.mapper.QuestionMapper;
 import life.witold.community.model.Question;
+import life.witold.community.model.QuestionExample;
 import life.witold.community.model.User;
+import life.witold.community.model.UserExample;
 import life.witold.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +22,9 @@ import javax.servlet.http.HttpServletRequest;
 public class PublishController {
     @Autowired
     private QuestionService questionService;
+
+    @Autowired
+    private QuestionMapper questionMapper;
 
     @GetMapping("/publish")
     public String publish() {
